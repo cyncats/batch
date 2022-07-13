@@ -1,0 +1,14 @@
+::Script for deleting actual backgrounds, Copying and pasting the new image into the Teams Background folder. 
+::	Minimum size: 360 x 360 pixels
+::	Maximum size: 2048 x 2048 pixels
+::	File type: jpeg, png, bmp
+::	Aspect ratio: Greater than 4
+
+@echo off
+
+::to delete the actual standart background images.
+del /s /f /q C:\Users\%username%\AppData\Roaming\Microsoft\Teams\Backgrounds\
+
+if not exist "C:\Users\%username%\AppData\Roaming\Microsoft\Teams\Backgrounds\ " mkdir C:\Users\%username%\AppData\Roaming\Microsoft\Teams\Backgrounds\Uploads
+
+xcopy "Z:\Shared\Marketing_Global\001NEW\001_Brand\Images\MS Teams Backgrounds" C:\Users\%username%\AppData\Roaming\Microsoft\Teams\Backgrounds\Uploads 
